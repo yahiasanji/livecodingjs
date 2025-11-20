@@ -70,8 +70,17 @@ function groupBookingsByStatus() {
   //   confirmed: [booking1, booking2...],
   //   pending: [booking3...]
   // }
-}
 
+  let confirmed = [];
+  let pending = [];
+  confirmed = spaceData.bookings.filter((b) => b.status === "confirmed");
+  pending = spaceData.bookings.filter((b) => b.status === "pending");
+  object = {
+    confirmed: confirmed,
+    pending: pending,
+  };
+  return object;
+}
 // CHALLENGE 8: Find the most expensive booking
 // RESTRICTION use Only for, while, and standard logic.
 function findMostExpensiveBooking() {}
